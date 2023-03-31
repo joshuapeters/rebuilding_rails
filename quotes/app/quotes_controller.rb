@@ -1,5 +1,5 @@
 class QuotesController < R001z::Controller
     def a_quote
-        "What is the sound of one hand clapping?"
+        "What kinda rappin is this?"
     end
 end

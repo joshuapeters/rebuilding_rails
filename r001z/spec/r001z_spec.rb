@@ -30,4 +30,10 @@ RSpec.describe R001z do
       expect("test action").to eq R001z::App.new.call(env).last.last
     end
   end
+
+  describe "to_underscore" do
+    it "converts camelcase to underscore" do
+      expect("test_controller").to eq R001z.to_underscore("TestController")
+    end
+  end
 end
