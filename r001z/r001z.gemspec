@@ -10,15 +10,15 @@ Gem::Specification.new do |spec|
 
   spec.summary = "A dope thing"
   spec.description = "a description"
-  spec.homepage = "my homepage"
+  spec.homepage = "https://google.com"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["allowed_push_host"] = "N/A"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "N/A"
-  spec.metadata["changelog_uri"] = "N/A"
+  spec.metadata["source_code_uri"] = spec.homepage
+  spec.metadata["changelog_uri"] = spec.homepage
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -34,6 +34,9 @@ Gem::Specification.new do |spec|
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
   spec.add_runtime_dependency "rack", "~> 2.0.7"
+
+  # webrick is not included in ruby versions >= 3.0, so we need to include it along with rack
+  spec.add_runtime_dependency "webrick", "~> 1.4.2"
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
