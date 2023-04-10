@@ -2,7 +2,10 @@
 
 require_relative "r001z/version"
 
+require "erb"
+
 module R001z
+
   class App
     def call(env)
       controller, action = controller_and_action(env)
@@ -22,6 +25,12 @@ module R001z
     
     def initialize(env)
       @env = env
+    end
+
+    def render(name, bind = binding())
+      template = "app/views/#{name}.html.erb"
+      erbTemplate = ERB.new(File.read(template))
+      erbTemplate.result(bind)
     end
   end
 
