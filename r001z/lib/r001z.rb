@@ -32,6 +32,14 @@ module R001z
       erbTemplate = ERB.new(File.read(template))
       erbTemplate.result(bind)
     end
+
+    def request
+      @request ||= Rack::Request.new(@env)
+    end
+
+    def params
+      request.params
+    end
   end
 
   class Object

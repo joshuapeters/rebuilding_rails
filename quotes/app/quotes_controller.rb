@@ -7,4 +7,9 @@ class QuotesController < R001z::Controller
         @noun = :winking
         render(:shakes)
     end
+
+    def card_trick
+        @card = params["card"] || "Queen"
+        "Your card is the #{@card} of Spades!"
+    end
 end
